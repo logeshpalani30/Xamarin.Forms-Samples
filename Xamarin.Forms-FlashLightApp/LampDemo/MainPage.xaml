@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LampDemo"
+             x:Class="LampDemo.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <Label Text="Lamp Application" 
+               FontSize="25"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"></Label>
+        <Label Text="" FontSize="30" x:Name="label"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        <Switch Toggled="Switch_OnToggled" x:Name="switch"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+    </StackLayout>
+ 
+
+</ContentPage>
