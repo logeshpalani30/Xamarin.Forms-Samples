@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RestarantAppDemo"
+             xmlns:abstractions="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="RestarantAppDemo.MainPage"
+             Title="Foodie!">
+
+    <!-- Place new controls here -->
+        <!--<StackLayout Margin="10,10,10,10" HorizontalOptions="FillAndExpand">
+            <AbsoluteLayout HeightRequest="140">
+                <Image Source="MoonriseHome.png" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+                <Label Text="Briyani Hotel" TextColor="White" FontSize="20" Margin="10,10,0,0"  AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0,-1,-1" />
+            </AbsoluteLayout>
+    </StackLayout>-->
+<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout x:Name="overAllStack" HeightRequest="150">
+        <abstractions:CarouselViewControl ItemsSource="{Binding ImageModel}"
+                                          IndicatorsShape="Circle" 
+                                          IndicatorsTintColor="White" 
+                                          CurrentPageIndicatorTintColor="MediumVioletRed" 
+                                          ShowArrows="True" 
+                                          ShowIndicators="True" 
+                                          Position="{Binding PositionImage}" 
+                                          VerticalOptions="FillAndExpand"
+                                          HeightRequest="150"
+                                          Orientation="Horizontal"
+                                          AnimateTransition="True"
+                                          >
+                <abstractions:CarouselViewControl.ItemTemplate >
+                    <DataTemplate>
+                       <StackLayout >
+                            <AbsoluteLayout  HeightRequest="150">
+                                <Image Source="{Binding ImageSource}" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+                                <BoxView Color="#66000000" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+                                <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="White" FontSize="20" Margin="10,10,0,0"  AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" />
+                            </AbsoluteLayout>
+                         </StackLayout>
+                    </DataTemplate>
+                </abstractions:CarouselViewControl.ItemTemplate>
+        </abstractions:CarouselViewControl>
+    </StackLayout>
+        <StackLayout Margin="10,8,0,0" HorizontalOptions="FillAndExpand">
+           <Label Text="Food Items" TextColor="Black" FontSize="20" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
+    </StackLayout>
+    <StackLayout BackgroundColor="White">
+        <!-- Use your own layout and functionality here! -->
+        <CollectionView x:Name="collectionList" Margin="10" SelectionMode="Single" ItemsSource="{Binding ImageFood}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Span="3" 
+                                 Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <AbsoluteLayout Padding="10" HorizontalOptions="FillAndExpand" HeightRequest="60">
+                        <Image x:Name="img" Source="{Binding ImageSource}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="AspectFill" HeightRequest="40" WidthRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickCommand}" CommandParameter="{x:Reference img}" BindingContext="{Binding Source={x:Reference collectionList}, Path=BindingContext}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image x:Name="imageSelectTick"  Source="{Binding TickSource}"  AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".98,.03,-1,-1" Aspect="AspectFit" HeightRequest="20" WidthRequest="25" />
+
+                    </AbsoluteLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Clicked="Handle_Clicked" Text="View Order" HorizontalOptions="FillAndExpand" FontSize="Medium" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="100" TextColor="White" BackgroundColor="Fuchsia"/>
+    </StackLayout>
+    </StackLayout>
+</ContentPage>

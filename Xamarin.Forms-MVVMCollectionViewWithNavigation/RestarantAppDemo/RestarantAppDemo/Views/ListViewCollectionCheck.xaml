@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestarantAppDemo.Views.ListViewCollectionCheck"
+             Title="Selected Hotels!">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="selectedList"
+                      CachingStrategy="RecycleElement"
+                      HorizontalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      VerticalOptions="FillAndExpand"
+                      VerticalScrollBarVisibility="Always"
+                      SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" >
+                                    <Image x:Name="img" Source="{Binding ImageSource}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

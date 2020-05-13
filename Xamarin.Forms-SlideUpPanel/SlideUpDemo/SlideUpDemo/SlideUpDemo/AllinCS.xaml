@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SlideUpDemo.AllinCS"
+             xmlns:DK="clr-namespace:DK.SlidingPanel.Interface;assembly=DK.SlidingPanel.Interface">
+  
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <DK:SlidingUpPanel x:Name="spTest" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+            
+        </DK:SlidingUpPanel>
+
+        </StackLayout>
+    
+</ContentPage>

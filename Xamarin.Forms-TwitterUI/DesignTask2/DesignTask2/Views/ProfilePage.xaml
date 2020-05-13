@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="DesignTask2.Views.ProfilePage">
+  <AbsoluteLayout BackgroundColor="White">
+        <Image Source="backgroundnew.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,120" AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" />
+                <!--<Button BackgroundColor="Maroon"
+                    AbsoluteLayout.LayoutBounds=".5,55,70,70" AbsoluteLayout.LayoutFlags="XProportional" BorderRadius="35" />-->
+            <abstractions:CircleImage BorderThickness="2" HeightRequest="80" WidthRequest="80" Source="Profile.jpg" AbsoluteLayout.LayoutBounds=".1,60,80,80" AbsoluteLayout.LayoutFlags="XProportional"/>
+                
+              
+                <StackLayout  AbsoluteLayout.LayoutBounds=".5,.25,.9,.2" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center">
+                    <Label Text="Logesh Palani" FontSize="18" TextColor="Black" FontAttributes="Bold"></Label> 
+                    <Label Text="@logeshpalani98"></Label>
+                </StackLayout>
+                <!--<StackLayout BackgroundColor="White" Padding="10,10,10,10" AbsoluteLayout.LayoutBounds=".5,.28,.9,.2" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center">
+                    <Label Text="@logeshpalani98"></Label>
+                </StackLayout>-->
+                <StackLayout BackgroundColor="White"  AbsoluteLayout.LayoutBounds=".5,.37,.9,.2" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center">
+                    <Label Text="Xamarin.Forms Developer" TextColor="DarkSlateGray"></Label>
+                    <Grid ColumnSpan="4" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="FollowLabel"  Grid.Column="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="200 " FontSize="15" FontAttributes="Bold"  TextColor="Black"></Span>
+                                    <Span Text="Following"  ></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label x:Name="FollowerLabel" Grid.Column="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="300 " FontSize="15" FontAttributes="Bold" TextColor="Black"></Span>
+                                    <Span Text="Followers"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        </Grid>
+                </StackLayout>
+            
+            <StackLayout Margin="10,10,10,10" AbsoluteLayout.LayoutBounds=".5,.47,1,.2" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <!--<BoxView HeightRequest="2" BackgroundColor="LightGray"></BoxView>-->
+                <Grid HeightRequest="20" ColumnSpan="4" HorizontalOptions="FillAndExpand" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
+                         <Label x:Name="label1"  TabIndex="0" HorizontalOptions="CenterAndExpand" HeightRequest="18" TextColor="DodgerBlue" Text="Tweet" />
+                         <BoxView x:Name="box1" IsVisible="True" HeightRequest="2" Color="DodgerBlue"></BoxView>
+                    </StackLayout>
+                        <StackLayout Grid.Column="1">
+                    <Label x:Name="label2" HorizontalOptions="CenterAndExpand" HeightRequest="18"  Text="Replies" />
+                        <BoxView x:Name="box2" IsVisible="True" HeightRequest="2"></BoxView>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2">
+                    <Label x:Name="label3" HorizontalOptions="CenterAndExpand" HeightRequest="18"  Text="Media" />
+                         <BoxView x:Name="box3" IsVisible="True" HeightRequest="2"></BoxView>
+                        </StackLayout>
+                        <StackLayout Grid.Column="3">
+                    <Label x:Name="label4" HorizontalOptions="CenterAndExpand" HeightRequest="18"  Text="Likes" />
+                            <BoxView x:Name="box4" IsVisible="True" HeightRequest="2"></BoxView>
+                        </StackLayout>
+                </Grid>
+           
+        </StackLayout>
+           
+                <ImageButton Source="settings.png" Clicked="SettingImageButton_OnClicked" Padding="5,5,5,5" BorderWidth="1" CornerRadius="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="Transparent" BorderColor="DodgerBlue"  AbsoluteLayout.LayoutBounds=".65,130,30,30" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <ImageButton Source="menu.png" Clicked="MenuImageButton_OnClicked" Padding="5,5,5,5" BorderWidth="1" CornerRadius="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="Transparent" BorderColor="Black"  AbsoluteLayout.LayoutBounds=".9,10,30,30" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <ImageButton Source="arrow.png" Clicked="ArrowImageButton_OnClicked" BackgroundColor="Transparent" CornerRadius="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"   AbsoluteLayout.LayoutBounds=".05,10,30,30" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <Button BorderWidth="1" Clicked="FollowButton_OnClicked" CornerRadius="15" FontSize="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Follow" FontAttributes="Bold" BackgroundColor="Transparent" BorderColor="DodgerBlue"  TextColor="DodgerBlue"  AbsoluteLayout.LayoutBounds=".9,130,75,30" AbsoluteLayout.LayoutFlags="XProportional"/>
+        <StackLayout x:Name="tweetLayout" IsVisible="True" BackgroundColor="White"  AbsoluteLayout.LayoutBounds=".5,1,0.95,.5" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout  VerticalOptions="FillAndExpand" Margin="5,5,5,5" Padding="5,5,5,5">
+                <Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>
+                <Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>
+                <Frame BorderColor="LightGray">
+                <Grid ColumnSpan="2">
+                   <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="70"/>
+                       <ColumnDefinition Width="*"/>
+                   </Grid.ColumnDefinitions>
+                        <abstractions:CircleImage HeightRequest="80" WidthRequest="80" Grid.Column="0" BorderThickness="2" AbsoluteLayout.LayoutBounds=".1,60,80,80" AbsoluteLayout.LayoutFlags="XProportional" Source="Profile.jpg" />
+
+                        <StackLayout Grid.Column="1">
+                            <Grid  Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="@logeshpalani98 " TextColor="Black"></Span>
+                                    <Span Text="Logesh Palani"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="The developer  evenglist page is busy check out later " TextColor="Black"></Span>
+                                   
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        </Grid>
+                        </StackLayout>
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+           </StackLayout>
+        <StackLayout x:Name="replyLayout" IsVisible="False" BackgroundColor="White"  AbsoluteLayout.LayoutBounds=".5,1,0.95,.5" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout  VerticalOptions="FillAndExpand" Margin="5,5,5,5" Padding="5,5,5,5">
+                <Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>
+               <Frame BorderColor="LightGray">
+                    <Grid ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <abstractions:CircleImage HeightRequest="80" WidthRequest="80" Grid.Column="0" BorderThickness="2" AbsoluteLayout.LayoutBounds=".1,60,80,80" AbsoluteLayout.LayoutFlags="XProportional" Source="Profile.jpg" />
+
+                        <StackLayout Grid.Column="1">
+                            <Grid  Grid.RowSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="@logeshpalani98 " TextColor="Black"></Span>
+                                            <Span Text="Logesh Palani"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Grid.Row="1">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="The developer  evenglist page is busy check out later " TextColor="Black"></Span>
+
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </StackLayout>
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="mediaLayout" IsVisible="False" BackgroundColor="White"  AbsoluteLayout.LayoutBounds=".5,1,0.95,.5" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout  VerticalOptions="FillAndExpand" Margin="5,5,5,5" Padding="5,5,5,5">
+                <Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>
+                <Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>
+                <Frame BorderColor="LightGray">
+                    <Grid ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <abstractions:CircleImage HeightRequest="80" WidthRequest="80" Grid.Column="0" BorderThickness="2" AbsoluteLayout.LayoutBounds=".1,60,80,80" AbsoluteLayout.LayoutFlags="XProportional" Source="Profile.jpg" />
+
+                       
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="likeLayout" IsVisible="False" BackgroundColor="White"  AbsoluteLayout.LayoutBounds=".5,1,0.95,.5" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout  VerticalOptions="FillAndExpand" Margin="5,5,5,5" Padding="5,5,5,5">
+                <!--<Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>
+                <Frame BorderColor="LightSkyBlue" BackgroundColor="LightSkyBlue">
+                    <Label Text="This tweet no longer avilable because there is violated the twitter rules, Twitter.com"></Label>
+                </Frame>-->
+                <Frame BorderColor="LightGray">
+                    <Grid ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <abstractions:CircleImage HeightRequest="80" WidthRequest="80" Grid.Column="0" BorderThickness="2" AbsoluteLayout.LayoutBounds=".1,60,80,80" AbsoluteLayout.LayoutFlags="XProportional" Source="Profile.jpg" />
+
+                        <StackLayout Grid.Column="1">
+                            <Grid  Grid.RowSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="@logeshpalani98 " TextColor="Black"></Span>
+                                            <Span Text="Logesh Palani"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Grid.Row="1">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="The developer  evenglist page is busy check out later " TextColor="Black"></Span>
+
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </StackLayout>
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

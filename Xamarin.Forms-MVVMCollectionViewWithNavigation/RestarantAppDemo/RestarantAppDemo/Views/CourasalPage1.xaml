@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestarantAppDemo.Views.CourasalPage1">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <!-- Use your own layout and functionality here! -->
+            <CollectionView x:Name="collectionList" Margin="10" SelectionMode="Single" ItemsSource="{Binding ImageFood}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="3" 
+                                     Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                           <AbsoluteLayout Padding="10" HorizontalOptions="FillAndExpand" HeightRequest="60">
+                            <Image x:Name="img" Source="{Binding ImageSource}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="AspectFill" HeightRequest="40" WidthRequest="40">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickCommand}" CommandParameter="{x:Reference img}" BindingContext="{Binding Source={x:Reference collectionList}, Path=BindingContext}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image x:Name="imageSelectTick"  Source="{Binding TickSource}"  AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".98,.03,-1,-1" Aspect="AspectFit" HeightRequest="20" WidthRequest="25" />
+                            
+                        </AbsoluteLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Clicked="Handle_Clicked" Text="View Order" HorizontalOptions="FillAndExpand" FontSize="Medium" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="100" TextColor="White" BackgroundColor="Fuchsia"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

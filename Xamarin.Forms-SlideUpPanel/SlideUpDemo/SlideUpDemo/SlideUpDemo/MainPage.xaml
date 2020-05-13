@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SlideUpDemo"
+             xmlns:DK="clr-namespace:DK.SlidingPanel.Interface;assembly=DK.SlidingPanel.Interface"
+             x:Class="SlideUpDemo.MainPage"
+             >
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        
+        <DK:SlidingUpPanel x:Name="spTest" BackgroundColor="Coral"  SlideAnimationSpeed="250" IsExpandable="True" IsPanSupport="True">
+         
+            
+            <DK:SlidingUpPanel.MainView>
+                <ScrollView>
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                    <Label Text="Hai All this is Main Layout" FontSize="30"/>
+                </StackLayout>
+                </ScrollView>
+            </DK:SlidingUpPanel.MainView>
+
+            
+            
+            <DK:SlidingUpPanel.HideTitleView>True</DK:SlidingUpPanel.HideTitleView>
+            <DK:SlidingUpPanel.HideNavBar>True</DK:SlidingUpPanel.HideNavBar>
+            <DK:SlidingUpPanel.PanelRatio>0.5</DK:SlidingUpPanel.PanelRatio>
+            
+            <DK:SlidingUpPanel.HeaderView>
+                
+                    <StackLayout Orientation="Horizontal" HeightRequest="48" Padding="0, 12, 0, 12" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#303030">
+                       
+                    <Image HeightRequest="24" WidthRequest="24" Source="ic_keyboard_arrow_left_black_48dp.png" HorizontalOptions="Start" VerticalOptions="FillAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BackButtonTapGesture_Tapped"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Label Text="Title" HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
+                    </StackLayout>
+                
+
+            </DK:SlidingUpPanel.HeaderView>
+            
+            <DK:SlidingUpPanel.PictureView>
+                <Image BackgroundColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Aspect="AspectFill" Source="honda.jpg"></Image>
+            </DK:SlidingUpPanel.PictureView>
+
+            <DK:SlidingUpPanel.TitleView>
+                <StackLayout  Orientation="Vertical" HeightRequest="80" BackgroundColor="GreenYellow">
+                    <Label Text="Title 1" FontSize="20"></Label>
+                    <Label Text="Title2" FontSize="20"></Label>
+                </StackLayout>
+             </DK:SlidingUpPanel.TitleView>
+            <DK:SlidingUpPanel.BodyView>
+                <ScrollView BackgroundColor="Blue">
+                    <Label Text="Test Body y Test Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body yTest Body y ">
+                    
+                    </Label>
+                </ScrollView>
+            </DK:SlidingUpPanel.BodyView>
+
+        </DK:SlidingUpPanel>
+    </StackLayout>
+
+</ContentPage>

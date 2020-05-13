@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:vMonitor"
+             x:Class="vMonitor.MainPage"
+             Title="vMonitor">
+
+    <StackLayout Orientation="Vertical" BackgroundColor="PaleGreen">
+
+        <Label Text="Login" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Blue" FontSize="20" BackgroundColor="Azure"/>
+       
+         
+            <Entry Placeholder="User Name"/>
+            
+            <Entry Placeholder="Password" />
+       
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Login" BackgroundColor="Red" Clicked="Button_OnClicked"  Grid.Column="0" Grid.Row="0"/>
+            <Label Text="Foget Password?" TextColor="Blue" Grid.Row="0" Grid.Column="1">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ForgetCommand}" 
+                                          CommandParameter="http://www.google.com"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <Button Text="Sign Up" BackgroundColor="MediumVioletRed" Clicked="Button_OnClicked1" />
+    </StackLayout>
+
+</ContentPage>

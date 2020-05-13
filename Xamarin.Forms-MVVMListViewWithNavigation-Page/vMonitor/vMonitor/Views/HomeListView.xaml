@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:emit="clr-namespace:System.Reflection.Emit;assembly=mscorlib"
+             x:Class="vMonitor.Views.HomeListView"
+             Title="Home List View"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            
+            <ListView ItemsSource="{Binding Model}"
+                      x:Name="listView"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <StackLayout Orientation="Horizontal" Padding="20">
+                                    <Label Text="{Binding Name}" FontSize="20" FontAttributes="Italic">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.TabCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="{Binding UserID}" FontSize="20" FontAttributes="Italic"/>
+
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+   
+</ContentPage>
