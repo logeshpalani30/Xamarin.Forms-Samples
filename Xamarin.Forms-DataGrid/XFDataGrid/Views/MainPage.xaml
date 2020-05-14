@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             x:Class="XFDataGrid.MainPage">
+    <ContentView>
+        <!-- Place new controls here -->
+        <dg:DataGrid ItemsSource="{Binding Professionals}" SelectionEnabled="True" SelectedItem="{Binding SelectedProfesstional}" RowHeight="70" HeaderHeight="50"
+                    BorderColor="#CCCCCC" HeaderBackground="#E0E6F8" PullToRefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" ActiveRowColor="#8899AA">
+            <x:Arguments>
+                <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+            </x:Arguments>
+            <dg:DataGrid.HeaderFontSize>
+                <OnIdiom x:TypeArguments="x:Double">
+                    <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                    <OnIdiom.Phone>12</OnIdiom.Phone>
+                </OnIdiom>
+            </dg:DataGrid.HeaderFontSize>
+            <dg:DataGrid.Columns>
+                <dg:DataGridColumn Title="ID" PropertyName="Id" Width="1*"></dg:DataGridColumn>
+                <dg:DataGridColumn PropertyName="Name" Width="2*">
+                    <dg:DataGridColumn.FormattedTitle>
+                        <FormattedString>
+                            <Span Text="Name" FontSize="13" TextColor="Black" FontAttributes="Bold"/>
+                        </FormattedString>
+                    </dg:DataGridColumn.FormattedTitle>
+                </dg:DataGridColumn>
+                <dg:DataGridColumn Title="Desigination" PropertyName="Desigination" Width="2*"/>
+                <dg:DataGridColumn Title="Domain" PropertyName="Domain" Width="2*"/>
+                <dg:DataGridColumn Title="Exp" PropertyName="Experience" Width="1*"/>
+            </dg:DataGrid.Columns>
+            <dg:DataGrid.RowsBackgroundColorPalette>
+                <dg:PaletteCollection>
+                    <Color>#F2F2F2</Color>
+                    <Color>#FFFFFF</Color>
+                </dg:PaletteCollection>
+            </dg:DataGrid.RowsBackgroundColorPalette>
+        </dg:DataGrid>
+    </ContentView>
+</ContentPage>
