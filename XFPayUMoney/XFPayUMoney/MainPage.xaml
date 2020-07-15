@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:customview="clr-namespace:XFPayUMoney.CustomView" mc:Ignorable="d" x:Class="XFPayUMoney.MainPage">
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <!-- Place new controls here -->
+        <Label Text="Xamarin Forms PayU Money" HeightRequest="50" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Black" TextColor="White" FontSize="20"/>
+        <customview:PayWebView  x:Name="wvPay" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+    </StackLayout>
+</ContentPage>
