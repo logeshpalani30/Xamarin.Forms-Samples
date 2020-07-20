@@ -23,7 +23,6 @@ namespace XFPayUMoney
 
             wvPay.url = "https://test.payu.in/_payment";
             wvPay.PostData = GetPostString();
-            //wvPay./
             wvPay.Navigated += WvPay_Navigated;
         }
 
