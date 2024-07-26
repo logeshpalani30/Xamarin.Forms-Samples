@@ -42,8 +42,8 @@ namespace XFPayUMoney
             string TxtStr = Generate();
             string txnid = GetHashString(TxtStr).Substring(0, 20);
             txnid = "TXN" + txnid;
-            string key = "";  //Key 
-            string salt = ""; //salt
+            string key = "";
+            string salt = ""; 
             StringBuilder post = new StringBuilder();
             post.Append("key=");
             post.Append(key);
